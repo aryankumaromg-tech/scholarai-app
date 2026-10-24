@@ -4,6 +4,9 @@ import { papers, analyses } from "@/db/schema";
 import { generateAnalysis } from "@/lib/ai-analysis";
 import { desc } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export async function GET() {
   const allPapers = await db.select().from(papers).orderBy(desc(papers.createdAt));
   return NextResponse.json({ papers: allPapers });

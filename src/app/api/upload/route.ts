@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractDocument, MAX_UPLOAD_BYTES } from "@/lib/document-ingest";
 
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
+
 export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {

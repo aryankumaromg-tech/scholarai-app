@@ -4,6 +4,9 @@ import { analyses, papers } from "@/db/schema";
 import { generateAnalysis } from "@/lib/ai-analysis";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
   const paperId = Number.parseInt(String(body?.paperId ?? ""), 10);
